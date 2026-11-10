@@ -1,0 +1,36 @@
+algoritmo "PosicionarNavios"
+var
+   tabuleiro: vetor [1..5, 1..5] de caractere
+   l, c: inteiro
+
+inicio
+   // 1. Limpa/Inicializa o tabuleiro com água "~"
+   para l de 1 ate 5 faca
+      para c de 1 ate 5 faca
+         tabuleiro[l, c] <- "~"
+      fimpara
+   fimpara
+
+   // 2. Posiciona Navio Horizontal (Linha 2, Colunas 1, 2 e 3)
+   tabuleiro[2, 1] <- "N"
+   tabuleiro[2, 2] <- "N"
+   tabuleiro[2, 3] <- "N"
+
+   // 3. Posiciona Navio Vertical (Coluna 4, Linhas 3, 4 e 5)
+   tabuleiro[3, 4] <- "N"
+   tabuleiro[4, 4] <- "N"
+   tabuleiro[5, 4] <- "N"
+
+   // 4. Desenha o tabuleiro na tela
+   escreval("=== BATALHA NAVAL ===")
+   escreval()
+   
+   para l de 1 ate 5 faca
+      para c de 1 ate 5 faca
+         // Mostra cada posição lado a lado com um espaço
+         escreva(tabuleiro[l, c], " ")
+      fimpara
+      // Pula para a próxima linha após desenhar as 5 colunas
+      escreval() 
+   fimpara
+fimalgoritmo
